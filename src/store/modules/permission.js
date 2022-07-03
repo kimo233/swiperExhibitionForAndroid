@@ -51,14 +51,11 @@ const actions = {
   generateRoutes({ commit },roles) {
     return new Promise(resolve => {
       let accessedRoutes
-      if (user.state.type === 0) {
+      if (user.state.roles.includes('user')) {
+        accessedRoutes = filterAsyncRoutes(asyncRoutes, ['user'])
+        console.log(accessedRoutes)
+      } else {
         accessedRoutes = filterAsyncRoutes(asyncRoutes, ['admin'])
-        console.log(accessedRoutes)
-      } else if(user.state.type === 1){
-        accessedRoutes =  filterAsyncRoutes(asyncRoutes, ['teacher'])
-        console.log(accessedRoutes)
-      }else {
-        accessedRoutes =  filterAsyncRoutes(asyncRoutes, ['student'])
         console.log(accessedRoutes)
       }
       commit('SET_ROUTES', accessedRoutes)

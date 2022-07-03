@@ -46,16 +46,6 @@
       </el-tooltip>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
-
-      <div style="position:relative">
-        <el-radio-group v-model="radio" @change="typeChange">
-        <el-radio :label="2">student</el-radio>
-        <el-radio :label="1">teacher</el-radio>
-       <el-radio :label="0">admin</el-radio>
-  </el-radio-group>
- 选中:{{radio}}
-
-      </div>
     </el-form>
 
     <el-dialog title="Or connect with" :visible.sync="showDialog">
@@ -93,8 +83,8 @@ export default {
     }
     return {
       loginForm: {
-        username: '1',
-        password: '31901032'
+        username: 'admin',
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -106,7 +96,6 @@ export default {
       showDialog: false,
       redirect: undefined,
       otherQuery: {},
-      radio: 2
     }
   },
   watch: {

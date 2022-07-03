@@ -81,148 +81,152 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/user',
+    path: '/material',
     component: Layout,
-    redirect: '/user/page',
+    redirect: '/material/page',
     alwaysShow: true, 
-    name: 'user',
+    name: 'material',
     meta: {
-        title: '用户管理',
-        roles: ['admin'] // 普通的用户角色
+        title: '素材管理',
+        roles: ['user'] // 普通的用户角色
     },
     children: [
         {
-            path: 'student',
-            component: () => import('@/views/admin/studentManageView.vue'),
-            name: 'studentManage',
+            path: 'materialManage',
+            component: () => import('@/views/material/materialManage.vue'),
+            name: 'materialManage',
             meta: {
-                title: '学生管理',
-                roles: ['admin']    //  admin角色的用户才能访问该页面
+                title: '查看素材',
+                roles: ['user']   
             }
         },
         {
-          path: 'teacher',
-          component: () => import('@/views/admin/teacherManageView.vue'),
-          name: 'teacherManage',
+          path: 'materialAdd',
+          component: () => import('@/views/material/materialAdd.vue'),
+          name: 'materialAdd',
           meta: {
-              title: '老师管理',
-              roles: ['admin']    //  admin角色的用户才能访问该页面
+              title: '添加素材',
+              roles: ['user']    
           }
       }
     ]
-},
-{
-  path: '/class',
+},{
+  path: '/program',
   component: Layout,
-  redirect: '/class/page',
+  redirect: '/program/page',
   alwaysShow: true, 
-  name: 'class',
+  name: 'program',
   meta: {
-      title: '课程管理',
-      roles: ['admin','teacher','student'] // 普通的用户角色
+      title: '节目管理',
+      roles: ['user'] // 普通的用户角色
   },
   children: [
       {
-          path: 'checkClass',
-          component: () => import('@/views/admin/class/classManageView.vue'),
-          name: 'checkClass',
+          path: 'programManage',
+          component: () => import('@/views/program/programManage.vue'),
+          name: 'programManage',
           meta: {
-              title: '查看课程',
-              roles: ['admin']    //  admin角色的用户才能访问该页面
+              title: '查看节目',
+              roles: ['user']    //  admin角色的用户才能访问该页面
           }
       },
       {
-        path: 'checkClass1',
-        component: () => import('@/views/teacher/classManageView.vue'),
-        name: 'checkClass1',
+        path: 'programAdd',
+        component: () => import('@/views/program/programAdd.vue'),
+        name: 'programAdd',
         meta: {
-            title: '查看课程',
-            roles: ['teacher','student']    //  admin角色的用户才能访问该页面
-        }
-    },
-      {
-        path: 'addClass',
-        component: () => import('@/views/admin/class/classAddView.vue'),
-        name: 'addClass',
-        meta: {
-            title: '新建课程',
-            roles: ['admin']    //  admin角色的用户才能访问该页面
+            title: '添加节目',
+            roles: ['user']    
         }
     },
     ]
 },
 {
-  path: '/test',
+  path: '/plan',
   component: Layout,
-  redirect: '/test/page',
+  redirect: '/plan/page',
   alwaysShow: true, 
-  name: 'test',
+  name: 'plan',
   meta: {
-      title: '考试管理',
-      roles: ['admin', 'teacher','student'] 
+      title: '计划管理',
+      roles: ['user'] 
   },
   children: [
       {
-          path: 'checkTest',
-          component: () => import('@/views/teacher/testManageView.vue'),
-          name: 'checkTest',
+          path: 'planManage',
+          component: () => import('@/views/plan/planManage.vue'),
+          name: 'planManage',
           meta: {
-              title: '查看考试',
-              roles: ['admin', 'teacher']    //  admin角色的用户才能访问该页面
+              title: '查看计划',
+              roles: ['user']   
           }
       },
       {
-        path: 'addTest',
-        component: () => import('@/views/teacher/testAddView.vue'),
-        name: 'addClass',
+        path: 'planAdd',
+        component: () => import('@/views/plan/planAdd.vue'),
+        name: 'planAdd',
         meta: {
-            title: '新建考试',
-            roles: ['teacher']    //  teacher角色的用户才能访问该页面
+            title: '添加计划',
+            roles: ['user']    //  teacher角色的用户才能访问该页面
         }
     }, 
-    {
-      path: 'joinTest',
-      component: () => import('@/views/admin/userManageView.vue'),
-      name: 'joinClass',
-      meta: {
-          title: '参加考试',
-          roles: ['student']    //  teacher角色的用户才能访问该页面
-      }
-  },
     ]
 },
 {
-  path: '/quiz',
+  path: '/equipment',
   component: Layout,
-  redirect: '/quiz/page',
+  redirect: '/equipment/page',
   alwaysShow: true, 
-  name: 'quiz',
+  name: 'equipment',
   meta: {
-      title: '题库管理',
-      roles: ['teacher'] 
+      title: '设备管理',
+      roles: ['user'] 
   },
   children: [
       {
-          path: 'checkQuiz',
-          component: () => import('@/views/teacher/quizManageView.vue'),
-          name: 'checkQuiz',
+          path: 'equipmentManage',
+          component: () => import('@/views/equipment/equipmentManage.vue'),
+          name: 'equipmentManage',
           meta: {
-              title: '查看题库',
-              roles: [ 'teacher']    //  admin角色的用户才能访问该页面
+              title: '查看设备',
+              roles: ['user']    //  admin角色的用户才能访问该页面
           }
       },
       {
-        path: 'addQuiz',
-        component: () => import('@/views/teacher/quizAddLabel.vue'),
-        name: 'addQuiz',
+        path: 'equipmentAdd',
+        component: () => import('@/views/equipment/equipmentAdd.vue'),
+        name: 'equipmentAdd',
         meta: {
-            title: '添加问题',
-            roles: ['teacher']    //  admin角色的用户才能访问该页面
+            title: '添加设备',
+            roles: ['user']    //  admin角色的用户才能访问该页面
         }
     },
     ]
 },
 
+{
+  path: '/user',
+  component: Layout,
+  redirect: '/user/page',
+  alwaysShow: true, 
+  name: 'user',
+  meta: {
+      title: '用户管理',
+      roles: ['admin','user'] 
+  },
+  children: [
+    {
+      path: 'userManage',
+      component: () => import('@/views/user/userManage.vue'),
+      name: 'userManage',
+      meta: {
+          title: '查看用户',
+          roles: ['admin','user']    //  admin角色的用户才能访问该页面
+      }
+  },
+  ]
+
+},
 ]
 
 const createRouter = () => new Router({
