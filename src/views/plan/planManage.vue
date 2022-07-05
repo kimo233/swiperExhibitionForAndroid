@@ -1,6 +1,10 @@
 <template>
   <div>
-    计划管理
+     <el-divider></el-divider>
+    <el-row type="flex" class="row-bg" justify="center">
+      计划管理
+    </el-row>
+    
     <el-table
       :data="PlanList"
       style="width: 100%"
@@ -23,7 +27,7 @@
       />
       <el-table-column
         prop="plandata"
-        label="数据"
+        label="日期"
         width="150"
       />
       <el-table-column
@@ -33,12 +37,12 @@
       />
       <el-table-column
         prop="plansync"
-        label="内容"
+        label="多屏同步"
         width="150"
       />
       <el-table-column
         prop="plancontent"
-        label="注释"
+        label="计划内容"
         width="150"
       />
       <el-table-column

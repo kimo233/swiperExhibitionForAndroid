@@ -22,3 +22,22 @@ export function planDelById(id) {
     }
   })
 }
+
+export function planAdd(planname, stratrgy, plandata, plantime, plansync, plancontent, planauth) {
+  return request({
+    url: '/plan/add',
+    method: 'get',
+    params: {
+      'planname': planname,
+      'stratrgy': stratrgy,
+      'plandata': plandata,
+      'plantime': plantime,
+      'plansync': plansync,
+      'plancontent': plancontent,
+      'planauth': planauth,
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}

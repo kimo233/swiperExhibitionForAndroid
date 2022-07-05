@@ -1,6 +1,10 @@
 <template>
   <div>
-    用户管理
+    <el-divider></el-divider>
+    <el-row type="flex" class="row-bg" justify="center">
+      用户管理
+    </el-row>
+    <el-divider></el-divider>
     <el-table
       :data="UserList"
       style="width: 100%"

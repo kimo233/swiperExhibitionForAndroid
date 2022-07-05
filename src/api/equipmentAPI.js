@@ -22,3 +22,23 @@ export function equipmentDelById(id) {
     }
   })
 }
+
+export function equipAdd(equipmentname, macaddress, currentplan, online, equipmentorgan, equipmentresolvingratio, equipmentgroup, materialname) {
+  return request({
+    url: '/equipment/add',
+    method: 'get',
+    params: {
+      'equipmentname': equipmentname,
+      'macaddress': macaddress,
+      'currentplan': currentplan,
+      'online': online,
+      'equipmentorgan': equipmentorgan,
+      'equipmentresolvingratio': equipmentresolvingratio,
+      'equipmentgroup': equipmentgroup,
+      'materialname': materialname,
+    },
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}

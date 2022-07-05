@@ -1,40 +1,58 @@
 <template>
-  <div class="dashboard-container">
-    <el-divider></el-divider>
+  <div class="dashboard-editor-container">
+    <!-- <github-corner class="github-corner" /> -->
+
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
-    <shortcuts />
-    <el-row class="row-bg" type="flex" justify="space-between">
-      <el-divider direction="vertical"></el-divider>
+
+    <el-row>
       <el-col :xs="24" :sm="24" :lg="7">
         <div class="chart-wrapper">
           <div class="head-title">设备状态</div>
-          <shebei-chart />
+          <doughnut-chart />
         </div>
       </el-col>
-      <el-divider direction="vertical"></el-divider>
       <el-col :xs="24" :sm="24" :lg="7">
         <div class="chart-wrapper">
           <div class="head-title">素材资源</div>
           <pie-chart />
         </div>
       </el-col>
-      <el-divider direction="vertical"></el-divider>
       <el-col :xs="24" :sm="24" :lg="10">
         <div class="chart-wrapper">
           <div class="head-title">设备分布</div>
-          <eq-dis />
+          <column-chart />
+        </div>
+      </el-col>
+    </el-row>
+
+    <el-row>
+      <el-col :xs="24" :sm="24" :lg="14">
+        <div class="form-wrapper">
+          <div class="head-title">计划审核提醒</div>
+          <plan-form />
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :lg="10">
+        <div class="form-wrapper1">
+          <div class="head-title">事件记录</div>
+
+          <form-record />
+
         </div>
       </el-col>
     </el-row>
   </div>
 </template>
 
+
 <script>
-import { mapGetters } from 'vuex'
-import PieChart from '@/components/Echarts/PieChart.vue'
-import Shortcuts from '@/components/Echarts/Shortcuts.vue';
-import ShebeiChart from '@/components/Echarts/shebeiChart.vue';
-import EqDis from '@/components/Echarts/EqDis.vue';
+import PanelGroup from './components/PanelGroup'
+import DoughnutChart from './components/DoughnutChart'
+import PieChart from './components/PieChart'
+import ColumnChart from './components/ColumnChart.vue'
+import PlanForm from './components/PlanForm.vue'
+import FormRecord from './components/FormRecord.vue'
+
 
 const lineChartData = {
   newVisitis: {
@@ -56,29 +74,25 @@ const lineChartData = {
 }
 
 export default {
-  name: 'Dashboard',
+  name: 'DashboardAdmin',
   components: {
+    PanelGroup,
+    DoughnutChart,
     PieChart,
-    Shortcuts,
-    ShebeiChart,
-    EqDis,
-   
-   
-    
+    ColumnChart,
+    PlanForm,
+    FormRecord
   },
   data() {
     return {
       lineChartData: lineChartData.newVisitis,
-      eventsRecord: {},
-      total:"",
+      eventsRecord: {}
     }
   },
-  computed: {
-    ...mapGetters([
-      'name',
-    ])
-  },
-  methods:{
+  // mounted() {
+  //   this.query()
+  // },
+  methods: {
     query() {
       // getEventsRecord().then((res) => {
       //   this.eventsRecord = res.data.events
@@ -88,32 +102,45 @@ export default {
     handleSetLineChartData(type) {
       this.lineChartData = lineChartData[type]
     }
-
-  },
-  created() {
-  },
-  mounted(){
   }
 }
 </script>
+
 <style lang="scss" scoped>
-.row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
 .dashboard-editor-container {
   padding: 32px;
   background-color: rgb(240, 242, 245);
   position: relative;
 
+  .github-corner {
+    position: absolute;
+    top: 0px;
+    border: 0;
+    right: 0;
+  }
 
   .chart-wrapper {
-    background: #e5e9f2;
+    background: #fff;
     padding: 16px 16px 0;
     margin-bottom: 32px;
     margin: 0 10px;
   }
 
+  .form-wrapper1 {
+    background: #fff;
+    margin-top: 20px;
+    padding: 16px 16px;
+    margin-left: 10px;
+    height: 330px;
+
+  }
+    .form-wrapper {
+    background: #fff;
+    margin-top: 20px;
+    padding: 16px 16px;
+    margin-left: 10px;
+
+  }
   .head-title:before {
     content: "|";
     background-color: #1890ff!important;

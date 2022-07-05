@@ -1,12 +1,15 @@
 <template>
   <div>
-    设备管理
+
+    <el-divider></el-divider>
+    <el-row type="flex" class="row-bg" justify="center">
+      设备管理
+    </el-row>
     <el-table
       :data="EquipmentList"
       style="width: 100%"
     >
       <el-table-column
-
         prop="equipmentid"
         label="编号"
         width="100"
@@ -64,12 +67,12 @@
   </div>
 </template>
 <script>
-import { equipemtGetAll, equipemtDelById } from '@/api/equipmentAPI'
+import { equipmentGetAll, equipmentDelById } from '@/api/equipmentAPI'
 export default {
   data() {
     return {
       EquipemtId: '',
-      EquipemtList: [],
+      EquipmentList: [],
       sizeForm: {
         Name: '',
         id: '',
@@ -81,12 +84,12 @@ export default {
   },
   mounted() {
     this.getAllInfo()
-    console.log(this.EquipemtList)
+    console.log(this.EquipmentList)
   },
   methods: {
 
     del(row) {
-      equipemtDelById(row.equipemtid).then(response => {
+      equipmentDelById(row.equipmentid).then(response => {
         if (response.status == 200) {
           this.$message('删除成功')
         }
@@ -99,8 +102,8 @@ export default {
       // })
     },
     getAllInfo() {
-      equipemtGetAll().then(response => {
-        this.EquipemtList = response.data
+      equipmentGetAll().then(response => {
+        this.EquipmentList = response.data
       })
     }
 

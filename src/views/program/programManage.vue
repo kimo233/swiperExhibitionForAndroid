@@ -1,6 +1,10 @@
 <template>
   <div>
-    节目管理
+     <el-divider></el-divider>
+     <el-row type="flex" class="row-bg" justify="center">
+      节目管理
+     </el-row>
+    
     <el-table
       :data="ProgramList"
       style="width: 100%"
@@ -31,7 +35,7 @@
         width="100"
       >
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="del(scope.row)">删除</el-button>
+          <el-button type="text" size="small" @click="del(scope)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>

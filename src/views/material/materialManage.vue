@@ -1,6 +1,10 @@
 <template>
     <div>
-        素材管理
+        <el-divider></el-divider>
+    <el-row type="flex" class="row-bg" justify="center">
+      素材管理
+    </el-row>
+    <el-divider></el-divider>
         <el-row>
   <el-col :span="8" v-for="(item, index) in ImgList" :key="index" :offset="index > 0 ? 1 : 0">
     <el-card class="card" :span ="2">
