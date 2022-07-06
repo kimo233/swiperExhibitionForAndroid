@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <el-divider></el-divider>
+    <el-divider />
     <el-row type="flex" class="row-bg" justify="center">
       设备管理
     </el-row>

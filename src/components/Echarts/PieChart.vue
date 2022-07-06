@@ -5,7 +5,6 @@
 <script>
 import * as echarts from 'echarts'
 
-
 export default {
 
   props: {
@@ -61,9 +60,9 @@ export default {
             radius: [20, 85],
             center: ['50%', '38%'],
             data: [
-              { value: 1111, name: '图片' },
-              { value: 1234, name: '视频' },
-              { value: 555, name: '音频' }
+              { value: 50, name: '图片' },
+              { value: 100, name: '视频' },
+              { value: 70, name: '音频' }
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600

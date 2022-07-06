@@ -2,12 +2,12 @@
 import * as echarts from 'echarts'
 import { onMounted } from 'vue'
 export default {
-	setup() {
-		onMounted(() => {
-			// 获取DOM元素并且进行初始化
-			var myChart = echarts.init(document.getElementById('main'));
-			// 创建图标
-			myChart.setOption({
+  setup() {
+    onMounted(() => {
+      // 获取DOM元素并且进行初始化
+      var myChart = echarts.init(document.getElementById('main'))
+      // 创建图标
+      myChart.setOption({
 			  title: {
 			    text: 'ECharts 入门示例'
 			  },
@@ -23,8 +23,8 @@ export default {
 			      data: [5, 20, 36, 10, 10, 20]
 			    }
 			  ]
-			})
-		})
-	}
+      })
+    })
+  }
 }
 </script>

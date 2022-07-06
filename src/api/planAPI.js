@@ -34,7 +34,7 @@ export function planAdd(planname, stratrgy, plandata, plantime, plansync, planco
       'plantime': plantime,
       'plansync': plansync,
       'plancontent': plancontent,
-      'planauth': planauth,
+      'planauth': planauth
     },
     headers: {
       'Content-Type': 'application/json'

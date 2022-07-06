@@ -3,8 +3,7 @@
 </template>
 
 <script>
-import * as echarts from 'echarts';
-
+import * as echarts from 'echarts'
 
 export default {
 
@@ -65,8 +64,8 @@ export default {
               borderWidth: 2
             },
             label: {
-            show: false,
-            position: 'center'
+              show: false,
+              position: 'center'
             },
             emphasis: {
               label: {
@@ -79,7 +78,7 @@ export default {
               show: false
             },
             data: [
-              { value: 1, name: '离线' },
+              { value: 5, name: '离线' },
               { value: 2, name: '播放' },
               { value: 1, name: '空闲' }
             ],

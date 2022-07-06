@@ -1,10 +1,10 @@
 <template>
   <div>
-    <el-divider></el-divider>
+    <el-divider />
     <el-row type="flex" class="row-bg" justify="center">
       添加节目
     </el-row>
-    <el-divider></el-divider>
+    <el-divider />
     <el-form v-if="step==1" ref="form" :model="sizeForm" label-width="80px" size="mini">
       <el-form-item label="节目名字">
         <el-input v-model="sizeForm.programname" />
@@ -21,9 +21,9 @@
       </el-form-item>
       <el-row type="flex" justify="center">
         <el-button type="primary" @click="next()">
-        下一步
-      </el-button>
-      </el-row>  
+          下一步
+        </el-button>
+      </el-row>
     </el-form>
     <div v-if="step==2">
       <el-col v-for="(item, index) in ImgList" :key="index" :span="8" :offset="index > 0 ? 1 : 0">
@@ -41,12 +41,12 @@
       </el-col>
       <el-row type="flex" justify="center">
         <el-button type="primary" @click="forw()">
-        上一步
-      </el-button>
-      <el-button type="primary" @click="commit()">
-        提交
-      </el-button>
-      </el-row> 
+          上一步
+        </el-button>
+        <el-button type="primary" @click="commit()">
+          提交
+        </el-button>
+      </el-row>
     </div>
 
   </div>

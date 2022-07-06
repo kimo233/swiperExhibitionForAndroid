@@ -44,7 +44,6 @@
   </div>
 </template>
 
-
 <script>
 import PanelGroup from './components/PanelGroup'
 import DoughnutChart from './components/DoughnutChart'
@@ -52,7 +51,6 @@ import PieChart from './components/PieChart'
 import ColumnChart from './components/ColumnChart.vue'
 import PlanForm from './components/PlanForm.vue'
 import FormRecord from './components/FormRecord.vue'
-
 
 const lineChartData = {
   newVisitis: {

@@ -5,7 +5,6 @@
 <script>
 import * as echarts from 'echarts'
 
-
 export default {
 
   props: {
@@ -50,34 +49,34 @@ export default {
             type: 'shadow'
           }
         },
-         grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-          },
-          xAxis: [
-            {
-              type: 'category',
-              data: ['111', '分组1', '轮播测试', '123'],
-              axisTick: {
-                alignWithLabel: true
-              }
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: 'category',
+            data: ['111', '分组1', '轮播测试', '123'],
+            axisTick: {
+              alignWithLabel: true
             }
-          ],
-          yAxis: [
-            {
-              type: 'value'
-            }
-          ],
-          series: [
-            {
-              name: 'Direct',
-              type: 'bar',
-              barWidth: '20%',
-              data: [1, 1, 1, 1]
-            }
-          ]
+          }
+        ],
+        yAxis: [
+          {
+            type: 'value'
+          }
+        ],
+        series: [
+          {
+            name: 'Direct',
+            type: 'bar',
+            barWidth: '20%',
+            data: [1, 1, 1, 1]
+          }
+        ]
       })
     }
   }

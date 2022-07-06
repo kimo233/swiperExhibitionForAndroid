@@ -1,10 +1,10 @@
 <template>
   <div>
-     <el-divider></el-divider>
-     <el-row type="flex" class="row-bg" justify="center">
+    <el-divider />
+    <el-row type="flex" class="row-bg" justify="center">
       节目管理
-     </el-row>
-    
+    </el-row>
+
     <el-table
       :data="ProgramList"
       style="width: 100%"

@@ -1,34 +1,34 @@
 <template>
-    <el-row :gutter="20" style="padding-bottom: 10px" type="flex" justify="space-around">
-        <el-col :span="6">
-            <div class="ve-card ve_card1">
-                <img src="../../../src/assets/img/设备.png">
-                <div>
-                    <p>设备数量</p>
-                    <span>4</span>
-                </div>
-            </div>
-        </el-col>
-        <el-col :span="6">
-            <div class="ve-card ve_card1">
-                <img src="../../../src/assets/img/节目.png">
-                <div>
-                    <p>节目数量</p>
-                    <span>6</span>
-                </div>
-            </div>
-        </el-col>
-        <el-col :span="6">
-            <div class="ve-card ve_card1">
-                <img src="../../../src/assets/img/计划.png">
-                <div>
-                    <p>计划数量</p>
-                    <span>1</span>
-                </div>
-            </div>
-        </el-col>
-    
-    </el-row>
+  <el-row :gutter="20" style="padding-bottom: 10px" type="flex" justify="space-around">
+    <el-col :span="6">
+      <div class="ve-card ve_card1">
+        <img src="../../../src/assets/img/设备.png">
+        <div>
+          <p>设备数量</p>
+          <span>4</span>
+        </div>
+      </div>
+    </el-col>
+    <el-col :span="6">
+      <div class="ve-card ve_card1">
+        <img src="../../../src/assets/img/节目.png">
+        <div>
+          <p>节目数量</p>
+          <span>6</span>
+        </div>
+      </div>
+    </el-col>
+    <el-col :span="6">
+      <div class="ve-card ve_card1">
+        <img src="../../../src/assets/img/计划.png">
+        <div>
+          <p>计划数量</p>
+          <span>1</span>
+        </div>
+      </div>
+    </el-col>
+
+  </el-row>
 </template>
 
 <!-- <script setup></script> -->

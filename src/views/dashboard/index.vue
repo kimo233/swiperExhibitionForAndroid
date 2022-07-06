@@ -1,24 +1,24 @@
 <template>
   <div class="dashboard-container">
-    <el-divider></el-divider>
+    <el-divider />
     <panel-group @handleSetLineChartData="handleSetLineChartData" />
     <shortcuts />
     <el-row class="row-bg" type="flex" justify="space-between">
-      <el-divider direction="vertical"></el-divider>
+      <el-divider direction="vertical" />
       <el-col :xs="24" :sm="24" :lg="7">
         <div class="chart-wrapper">
           <div class="head-title">设备状态</div>
           <shebei-chart />
         </div>
       </el-col>
-      <el-divider direction="vertical"></el-divider>
+      <el-divider direction="vertical" />
       <el-col :xs="24" :sm="24" :lg="7">
         <div class="chart-wrapper">
           <div class="head-title">素材资源</div>
           <pie-chart />
         </div>
       </el-col>
-      <el-divider direction="vertical"></el-divider>
+      <el-divider direction="vertical" />
       <el-col :xs="24" :sm="24" :lg="10">
         <div class="chart-wrapper">
           <div class="head-title">设备分布</div>
@@ -32,9 +32,9 @@
 <script>
 import { mapGetters } from 'vuex'
 import PieChart from '@/components/Echarts/PieChart.vue'
-import Shortcuts from '@/components/Echarts/Shortcuts.vue';
-import ShebeiChart from '@/components/Echarts/shebeiChart.vue';
-import EqDis from '@/components/Echarts/EqDis.vue';
+import Shortcuts from '@/components/Echarts/Shortcuts.vue'
+import ShebeiChart from '@/components/Echarts/shebeiChart.vue'
+import EqDis from '@/components/Echarts/EqDis.vue'
 
 const lineChartData = {
   newVisitis: {
@@ -61,24 +61,26 @@ export default {
     PieChart,
     Shortcuts,
     ShebeiChart,
-    EqDis,
-   
-   
-    
+    EqDis
+
   },
   data() {
     return {
       lineChartData: lineChartData.newVisitis,
       eventsRecord: {},
-      total:"",
+      total: ''
     }
   },
   computed: {
     ...mapGetters([
-      'name',
+      'name'
     ])
   },
-  methods:{
+  created() {
+  },
+  mounted() {
+  },
+  methods: {
     query() {
       // getEventsRecord().then((res) => {
       //   this.eventsRecord = res.data.events
@@ -89,10 +91,6 @@ export default {
       this.lineChartData = lineChartData[type]
     }
 
-  },
-  created() {
-  },
-  mounted(){
   }
 }
 </script>
@@ -105,7 +103,6 @@ export default {
   padding: 32px;
   background-color: rgb(240, 242, 245);
   position: relative;
-
 
   .chart-wrapper {
     background: #e5e9f2;

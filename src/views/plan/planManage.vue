@@ -1,10 +1,10 @@
 <template>
   <div>
-     <el-divider></el-divider>
+    <el-divider />
     <el-row type="flex" class="row-bg" justify="center">
       计划管理
     </el-row>
-    
+
     <el-table
       :data="PlanList"
       style="width: 100%"

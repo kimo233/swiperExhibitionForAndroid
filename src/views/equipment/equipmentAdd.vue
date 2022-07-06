@@ -1,10 +1,10 @@
 <template>
   <div>
-    <el-divider></el-divider>
+    <el-divider />
     <el-row type="flex" class="row-bg" justify="center">
       添加设备
     </el-row>
-    <el-divider></el-divider>
+    <el-divider />
     <el-form v-if="step==1" ref="form" :model="sizeForm" label-width="80px" size="mini">
       <el-form-item label="设备名字">
         <el-input v-model="sizeForm.equipmentname" />
@@ -27,12 +27,12 @@
       </el-form-item>
       <el-row type="flex" justify="center">
         <el-button type="primary" @click="commit()">
-        提交
-      </el-button>
-      <el-button type="primary" @click="pr()">
-        打印
-      </el-button>
-      </el-row>  
+          提交
+        </el-button>
+        <el-button type="primary" @click="pr()">
+          打印
+        </el-button>
+      </el-row>
     </el-form>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default {
         currentplan: 'nothing',
         online: 1,
         equipmentgroup: '1',
-        materialname: '1',
+        materialname: '1'
 
       },
       options: [{
@@ -72,11 +72,11 @@ export default {
   methods: {
     commit() {
       equipAdd(this.sizeForm.equipmentname, this.sizeForm.macaddress, this.sizeForm.currentplan, this.sizeForm.online, this.sizeForm.equipmentorgan, this.sizeForm.equipmentresolvingratio, this.sizeForm.equipmentgroup, this.sizeForm.materialname).then(response => {
-        console.log(response)   
+        console.log(response)
       })
     },
-    pr(){
-        console.log(this.sizeForm.equipmentname, this.sizeForm.macaddress, this.sizeForm.currentplan, this.sizeForm.online, this.sizeForm.equipmentorgan, this.sizeForm.equipmentresolvingratio, this.sizeForm.equipmentgroup, this.sizeForm.materialname)
+    pr() {
+      console.log(this.sizeForm.equipmentname, this.sizeForm.macaddress, this.sizeForm.currentplan, this.sizeForm.online, this.sizeForm.equipmentorgan, this.sizeForm.equipmentresolvingratio, this.sizeForm.equipmentgroup, this.sizeForm.materialname)
     }
   }
 }

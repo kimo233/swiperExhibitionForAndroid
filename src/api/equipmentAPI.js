@@ -35,7 +35,7 @@ export function equipAdd(equipmentname, macaddress, currentplan, online, equipme
       'equipmentorgan': equipmentorgan,
       'equipmentresolvingratio': equipmentresolvingratio,
       'equipmentgroup': equipmentgroup,
-      'materialname': materialname,
+      'materialname': materialname
     },
     headers: {
       'Content-Type': 'application/json'
