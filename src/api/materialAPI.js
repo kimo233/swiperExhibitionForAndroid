@@ -13,7 +13,7 @@ export function materialGetAll() {
 export function materialAdd(materialname, base64, userid) {
   return request({
     url: '/material/add',
-    method: 'get',
+    method: 'post',
     params: {
       'materialname': materialname,
       'base64': base64,
